@@ -16,7 +16,7 @@ st.set_page_config(layout="wide", page_title="Indian Rainfall Analysis", page_ic
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("DataSets/rainfaLLIndia.csv")
+    df = pd.read_csv("rainfaLLIndia.csv")
     df.drop_duplicates(inplace=True)
     df['Avg_Jun_Sep'] = df[['JUN', 'JUL', 'AUG', 'SEP']].mean(axis=1)
     df.sort_values(by=['subdivision', 'YEAR'], inplace=True)
